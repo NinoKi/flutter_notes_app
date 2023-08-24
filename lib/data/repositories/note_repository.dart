@@ -13,6 +13,7 @@ class NotesRepository {
   }
 
   Stream<List<NoteDto>> getAll() {
+    // should it be List<NoteModel>???
     return _notesRemoteDataSource.getAll().map(
           (notesDto) => notesDto
               .map(
