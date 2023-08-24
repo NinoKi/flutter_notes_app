@@ -16,12 +16,13 @@ class NotesRepository {
     return _notesRemoteDataSource.getAll().map(
           (notesDto) => notesDto
               .map(
-                (e) => NoteModel(
+                (e) => NoteDto(
+                  // originally NoteModel
                   note: e.note,
                   path: e.path,
                 ),
               )
-              .toList();
+              .toList(),
         );
   }
 

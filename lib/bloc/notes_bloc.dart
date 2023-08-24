@@ -22,7 +22,9 @@ class NotesBloc extends Bloc<NotesEvent, NotesState> {
     Emitter emit,
   ) {
     emit.forEach(_notesRepository.getAll(), onData: (notes) {
-      return NotesLoadedState(notes: notes);
+      return NotesLoadedState(notes: notes); // originally NoteModel
+    }, onError: (_, __) {
+      return NotesErrorState();
     });
   }
 }

@@ -5,7 +5,7 @@ sealed class NotesState {}
 class NotesLoadingState extends NotesState {}
 
 class NotesLoadedState extends NotesState {
-  final List<NoteModel> notes;
+  final List<NoteDto> notes;
 
   NotesLoadedState({
     required this.notes,
