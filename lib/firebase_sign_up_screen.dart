@@ -70,7 +70,5 @@ class FirebaseSignUpScreen extends StatelessWidget {
       ),
     );
   }
+  blaa 
 }
-
-New line of code
-new Codec
