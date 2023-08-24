@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:html';
 
 import 'package:flutter_notes_app/data/models/note_model.dart';
 import 'package:flutter_notes_app/data/dto/note_dto.dart';
@@ -14,6 +13,8 @@ class NotesBloc extends Bloc<NotesEvent, NotesState> {
 
   NotesBloc(this._notesRepository) : super(NotesLoadingState()) {
     on<LoadNotesEvent>(_onLoadEvent);
+    on<WriteNoteEvent>(_onWriteEvent);
+    on<RemoveNotesEvent>(_onRemoveEvent);
     add(LoadNotesEvent());
   }
 
@@ -26,5 +27,27 @@ class NotesBloc extends Bloc<NotesEvent, NotesState> {
     }, onError: (_, __) {
       return NotesErrorState();
     });
+  }
+
+  FutureOr<void> _onWriteEvent(
+    WriteNoteEvent event,
+    Emitter emit,
+  ) async {
+    try {
+      await _notesRepository.write(event.text);
+    } catch (e) {
+      emit(NotesErrorState());
+    }
+  }
+
+  FutureOr<void> _onRemoveEvent(
+    RemoveNotesEvent event,
+    Emitter emit,
+  ) async {
+    try {
+      await _notesRepository.remove(event.path);
+    } catch (e) {
+      emit(NotesErrorState());
+    }
   }
 }

@@ -10,8 +10,8 @@ class WriteNoteEvent extends NotesEvent {
   WriteNoteEvent({required this.text});
 }
 
-class RemoveNoteEvent {
-  final String notePath;
+class RemoveNotesEvent extends NotesEvent {
+  final String path;
 
-  RemoveNoteEvent({required this.notePath});
+  RemoveNotesEvent({required this.path});
 }
