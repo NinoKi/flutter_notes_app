@@ -70,5 +70,4 @@ class FirebaseSignUpScreen extends StatelessWidget {
       ),
     );
   }
-  blaa 
 }
