@@ -26,6 +26,7 @@ class _NotesScreenState extends State<NotesScreen> {
       create: (_) => NotesBloc(
         NotesRepository(
           NotesRemoteDataSource(),
+          // GetIt.I.get();
         ),
       ),
       child: Scaffold(

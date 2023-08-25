@@ -1,0 +1,5 @@
+for authantication:
+  - auth dto
+  - auth repo
+  - auth remote data source
+  - bloc

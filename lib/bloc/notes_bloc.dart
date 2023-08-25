@@ -1,5 +1,4 @@
 import 'dart:async';
-
 import 'package:flutter_notes_app/data/models/note_model.dart';
 import 'package:flutter_notes_app/data/dto/note_dto.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
